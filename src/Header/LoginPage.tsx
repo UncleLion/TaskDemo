@@ -7,48 +7,60 @@ import './LoginPage.css'
 
 
 function LoginPage() {
+
     const [password, setPassword] = useState("")
     const [visible, setVisible] = useState(false)
 
     return (
-        <div className="wraper d-flex align-items-center justify-content-center w-100">
-            <div className='login rounded'>
+        <div className="container form-group">
+            <div className='row col-md-6 '>
                 <h2 className='mb-3'>Login Form</h2>
-                <form className='needs-validation'>
-                    <div className='form-group was-validated mb-2'>
-                        <div>
-                        </div>
-                        <label htmlFor='email' className='form-label bi bi-envelope-at'>Email Address</label>
-                        <input type="email" className='form-control  ' required placeholder='Email' />
-                        <div className='invalid-feedback'>
-                            Please Enter you email
-                        </div>
+                <form className='px-3'>
+                    <label htmlFor='email' className='form-label'>Email Address</label>
+                    <div className='form-input'>
+                        <span><i className='bi bi-envelope-at'></i></span>
+                        <input type="email" className='form-control form-control-lg bg-light ' required placeholder='Email' />
                     </div>
-                    <div className='form-group was-validated mb-2'>
-                        <label htmlFor='password' className='form-label' >Password</label>
+                    <div className='invalid-feedback'>
+                        Please Enter you email
+                    </div>
+                    <label htmlFor='password' className='form-label'>Password</label>
+                    <div className='form-input'>
+                        <span><i className='bi bi-lock'></i></span>
                         <input
-                            value={password}
-                            type={visible ? 'text' : 'password'}
-                            id='password'
-                            onChange={(e) => setPassword(e.target.value)}
-                            className='form-control'
-                            
-                            required
-                            placeholder='password'
-                        /><i className='bi bi-lock'></i>
-                        <div className='p-2' onClick={() => setVisible(!visible)}>
-                            {visible ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash-fill"></i> }
-                        </div>
+                        value={password}
+                        type={visible ? 'text' : 'password'}
+                        id='password'
+                        onChange={(e) => setPassword(e.target.value)}
+                        className='form-control'
+                        required
+                        placeholder='Password'
+                    />
+                    </div>
                         
-                        {/* <div className='invalid-feedback'> */}
-                            Please Enter you password
-                        {/* </div> */}
+                    <div className='icons' onClick={() => setVisible(!visible)}>
+                        {visible ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash-fill"></i> }
                     </div>
-                    <div className='form-group form-check mb-2'>
-                        <input type="checkbox" className='form-check-input'/>
-                        <label htmlFor='check' className='form-check-label'>Remember me</label>
+
+                    <div className='invalid-feedback'>
+                        Please Enter you password
                     </div>
-                    <button type='submit' className='btn btn-success w-100 mt-2'>SIGN IN</button>
+                    <div className='row mb-3'>
+                        <div className='col-auto d-flex align-items-center'>
+                            <div className='form-check custom-checkbox'>
+                                <input type="checkbox" className='form-check-input'/>
+                                <label className='form-check-label'>Remember me</label>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div className="forgot">
+                        <a href='#'>Forgot Password</a>
+                    </div>
+
+                    <div className='mb-3'>
+                        <button type='submit' className='btn btn-block'>SIGN IN</button>
+                    </div>
                 </form>
             </div>   
         </div> 

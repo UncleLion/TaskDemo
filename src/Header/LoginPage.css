@@ -1,7 +1,19 @@
-.wraper {
-    background: black;
-    height: 100vh;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    min-height: 100vh;
 }
+
+/* .form-group {
+    box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.1);
+    border-radius: 10px;
+    width: 28rem;
+    background: white;
+} */
+
 .login {
     width: 300px;
     padding: 20px;
@@ -9,4 +21,52 @@
     border-radius: 5px;
     border-color: black;
     background-color: white;
+}
+
+.form-group .form-input {
+    position: relative;
+}
+
+.form-group .form-input input {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #777;
+    outline: none;
+    background: transparent;
+    padding-left: 40px;
+    font-weight: bold;
+    color: #777;
+}
+
+.form-group .form-input span {
+    position: absolute;
+    top: 8px;
+    padding-left: 10px;
+    color: #777;
+}
+
+.form-group .form-input input::placeholder {
+    padding-left: 0px;
+}
+
+.form-group .custom-checkbox .form-check-input:checked ~ .form-check-label::before {
+    background-color: #4ea585 !important;
+    border: 0px;
+}
+
+.form-group button[type="submit"] {
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #4ea585, #57b894);
+    color: #fff;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+.form-group button[type="submit"]:hover {
+    background: linear-gradient(45deg, #57b894, #4ea585);
 }
