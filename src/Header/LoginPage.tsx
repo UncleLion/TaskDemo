@@ -1,12 +1,12 @@
-import React from 'react';
 import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import { Routes, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './LoginPage.css';
 
 function LoginPage() {
-    const { control, handleSubmit, formState: { errors } } = useForm();
+    const {control, handleSubmit, formState: { errors } } = useForm();
     const [visible, setVisible] = useState(false);
 
     const onSubmit = (data: Record<string, any>) => {
@@ -17,6 +17,7 @@ function LoginPage() {
         <div className="container form-group">
             <form className='mx-auto' onSubmit={handleSubmit(onSubmit)}>
                 <h2 className='mb-3'>Login Form</h2>
+                <h5 className='mb-3'>Enter the login information for the corporate client area</h5>
                 <div className='form-input mb-3'>
                     <span><i className='bi bi-envelope-at'></i></span>
                     <Controller
@@ -57,10 +58,13 @@ function LoginPage() {
                         {visible ? <span><i className="bi bi-eye"></i></span> : <span><i className="bi bi-eye-slash-fill"></i></span>}
                     </div>
                     <div className="forgot">
-                        <a href='#'>Forgot Password</a>
+                        <Link to="/forgot">Forgot Password</Link>
                     </div>
                 </div>
                 <button type='submit' className='btn btn-block'>SIGN IN</button>
+                {/* <div className="forgot">
+                        <Link to="/notWorking">Forgot Password</Link>
+                    </div> */}
             </form>
         </div>
     )
