@@ -57,14 +57,14 @@ function LoginPage() {
                     <div className='icons' onClick={() => setVisible(!visible)}>
                         {visible ? <span><i className="bi bi-eye"></i></span> : <span><i className="bi bi-eye-slash-fill"></i></span>}
                     </div>
-                    <div className="forgot">
-                        <Link to="/forgot">Forgot Password</Link>
-                    </div>
+                    {/* <div className="forgot">
+                        <a href='/'>Forgot password</a>
+                    </div> */}
                 </div>
                 <button type='submit' className='btn btn-block'>SIGN IN</button>
-                {/* <div className="forgot">
-                        <Link to="/notWorking">Forgot Password</Link>
-                    </div> */}
+                <div className="forgot">
+                        <Link to="/forgot">Forgot Password</Link>
+                    </div>
             </form>
         </div>
     )
